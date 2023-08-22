@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var n = parseInt(prompt("Digite um número inteiro: "));
+
+        let enesimoFibonacci = calcularEnesimoFibonacci(n);
+        console.log("O " + n + " número da sequência do Fibonacci é: " + enesimoFibonacci);
+
+        function calcularEnesimoFibonacci(n) {
+            if (n <= 0) {
+                return 0;
+            } else if (n == 1) {
+                return 1;
+            }
+
+            let fibMinus2 = 0;
+            let fibMinus1 = 1;
+            let fib = 0;
+
+            for (let i = 2; i <= n; i++) {
+                fib = fibMinus1 + fibMinus2;
+                fibMinus2 = fibMinus1;
+                fibMinus1 = fib;
+            }
+
+            return fib;
+        }
+
+    </script>
+</body>
+
+</html>
