@@ -17,16 +17,16 @@ class FibonacciMelhor {
             return 1;
         }
 
-        int fibMinus2 = 0;
-        int fibMinus1 = 1;
-        int fib = 0;
+        int ultimo = 0;
+        int penultimo = 1;
+        int atual = 0;
 
         for (int i = 2; i <= n; i++) {
-            fib = fibMinus1 + fibMinus2;
-            fibMinus2 = fibMinus1;
-            fibMinus1 = fib;
+            atual = penultimo + ultimo;
+            ultimo = penultimo;
+            penultimo = atual;
         }
 
-        return fib;
+        return atual;
     }
 }
